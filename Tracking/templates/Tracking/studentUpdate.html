@@ -1,0 +1,36 @@
+{% include 'Tracking/base.html' %}
+<html>
+    <head>
+        <style>
+            table,tr,td {border: 1pt solid;}
+            p{color: white;}
+            h2{color: white;}
+        </style>
+    </head>
+    <body>
+        <h2>Update Student</h2>
+        <br><br>
+        <form action="studentUpdatedata/{{ upstud.studentId }}" method='POST'>
+            {% csrf_token %}
+            <p>studentId:</p>
+                <input name='studentId' value="{{upstud.studentId}}" disabled="False">
+                <br><br>
+            <p>studentName:</p>
+                <input type="text" name='studentName' value="{{upstud.studentName}}">
+                <br><br>
+            <p>studentPhone:</p>
+                <input name='studentPhone' value="{{upstud.studentPhone}}">
+                <br><br>
+            <p>studentAddres:</p>
+                <input type="text" name='studentAddress' value="{{upstud.studentAddress}}">
+                <br><br>
+            <p>studentCourse:</p>
+                <input type="text" name='studentCourse' value="{{upstud.studentCourse}}">
+                <br><br>
+            <p>studentEmail:</p>
+                <input type="text" name='studentEmail' value="{{upstud.studentEmail}}">
+                <br><br>
+                <input type='submit' value='UPDATE' class="btn btn-secondary">
+        </form>
+    </body>
+</html>

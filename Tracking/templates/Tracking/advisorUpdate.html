@@ -1,0 +1,30 @@
+{% include 'Tracking/base.html' %}
+<html>
+    <head>
+        <style>
+            table,tr,td {border: 1pt solid;}
+            p{color: white;}
+            h2{color: white;}
+        </style>
+    </head>
+    <body>
+        <h2>Update Advisor</h2>
+        <br><br>
+        <form action="advisorUpdatedata/{{ uplect.advisorId }}" method='POST'>
+            {% csrf_token %}
+            <p>advisorId:</p>
+                <input name='advisorId' value="{{uplect.advisorId}}" disabled="False">
+                <br><br>
+            <p>advisorName:</p>
+                <input type="text" name='advisorName' value="{{uplect.advisorName}}">
+                <br><br>
+            <p>advisorPhone:</p>
+                <input name='advisorPhone' value="{{uplect.advisorPhone}}">
+                <br><br>
+            <p>advisorEmail:</p>
+                <input name='advisorEmail' value="{{uplect.advisorEmail}}">
+                <br><br>
+                <input type='submit' value='UPDATE' class="btn btn-secondary">
+        </form>
+    </body>
+</html>

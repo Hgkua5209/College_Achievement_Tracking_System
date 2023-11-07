@@ -1,0 +1,27 @@
+{% include 'Tracking/base.html' %}
+<html>
+    <head>
+        <style>
+            table,tr,td {border: 1pt solid;}
+            p{color: white;}
+            h2{color: white;}
+        </style>
+    </head>
+    <body>
+        <h2>Update SportClubs</h2>
+        <br><br>
+        <form action="adminSportCodeUpdatedata/{{ upSC.sportClubsCode }}" method='POST'>
+            {% csrf_token %}
+            <p>sportClubsCode:</p>
+                <input name='sportClubsCode' value="{{upSC.sportClubsCode}}" disabled="False">
+                <br><br>
+            <p>sportClubsName:</p>
+                <input type="text" name='sportClubsName' value="{{upSC.sportClubsName}}">
+                <br><br>
+            <p>sportClubsDescription:</p>
+                <input name='sportClubsDescription' value="{{upSC.sportClubsDescription}}">
+                <br><br>
+                <input type='submit' value='UPDATE' class="btn btn-secondary">
+        </form>
+    </body>
+</html>

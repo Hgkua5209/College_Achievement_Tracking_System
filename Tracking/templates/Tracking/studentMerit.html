@@ -1,0 +1,90 @@
+{% include 'Tracking/Notbase.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "Tracking/media/parallax.css" %}">
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h3 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 50%;
+            margin-top: 50px;
+            box-shadow: 5px 5px 5px #888;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 15px;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid black;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .parallax {
+            /* Set a specific height */
+            height: 500px;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+  </style>
+</head>
+<body>
+
+    <h3>Achievement Information</h3>
+
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Advisor ID</th>
+            <th>Sports Clubs Code</th>
+            <th>Session</th>
+            <th>Date</th>
+            <th>Achievement</th>
+            <th>Merit</th>
+        </tr> 
+        {% for achievement in achievements %}
+        <tr>
+            <td>{{ achievement.studentId_id }}</td>
+            <td>{{ achievement.advisorId_id }}</td>
+            <td>{{ achievement.sportClubsCode_id }}</td>
+            <td>{{ achievement.session }}</td>
+            <td>{{ achievement.date }}</td>
+            <td>{{ achievement.achivement }}</td>
+            <td>{{ achievement.merit }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <p>Total Merit: {{ total_merit }}</p>
+
+  <div class="parallax"></div>
+
+  <div class="parallax"></div>
+</body>
+</html>
